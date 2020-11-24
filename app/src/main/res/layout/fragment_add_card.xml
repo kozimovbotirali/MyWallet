@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:context=".presentation.screens.MainActivity">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize" />
+
+        <include layout="@layout/card_item" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="@dimen/text_20">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layoutPan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Card's Pan"
+                    android:textColorHint="@color/colorHint"
+                    app:hintTextColor="@color/colorPrimary"
+                    tools:ignore="HardcodedText">
+
+                    <com.github.pinball83.maskededittext.MaskedEditText
+                        android:id="@+id/input_pan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:digits="0123456789"
+                        android:gravity="center|left"
+                        android:inputType="numberPassword|phone"
+                        android:singleLine="true"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="@id/text_name"
+                        app:mask="**** **** **** ****"
+                        app:notMaskedSymbol="*"
+                        tools:ignore="HardcodedText,RtlHardcoded,RtlSymmetry" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layoutExpired"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:hint="Expired At"
+                    android:textColorHint="@color/colorHint"
+                    app:hintTextColor="@color/colorPrimary"
+                    tools:ignore="HardcodedText">
+
+                    <com.github.pinball83.maskededittext.MaskedEditText
+                        android:id="@+id/input_expired"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:digits="0123456789"
+                        android:gravity="center|left"
+                        android:inputType="numberPassword|phone"
+                        android:singleLine="true"
+                        android:textSize="14sp"
+                        app:mask="**/**"
+                        app:notMaskedSymbol="*"
+                        tools:ignore="HardcodedText,RtlHardcoded,RtlSymmetry" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layoutName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:hint="Card name"
+                    android:textColorHint="@color/colorHint"
+                    app:hintTextColor="@color/colorPrimary"
+                    tools:ignore="HardcodedText">
+
+                    <EditText
+                        android:id="@+id/input_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center|left"
+                        android:inputType="textPersonName"
+                        android:singleLine="true"
+                        android:textSize="14sp"
+                        tools:ignore="Autofill,HardcodedText,LabelFor,RtlHardcoded,RtlSymmetry" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/text_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:maxWidth="200dp"
+                    android:maxLines="2"
+                    android:text="Choose color"
+                    android:textColor="#fff"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="HardcodedText" />
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RadioGroup
+                        android:id="@+id/radio_group"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/radio1"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/color1"
+                            android:button="@null" />
+
+                        <RadioButton
+                            android:id="@+id/radio2"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/color2"
+                            android:button="@null" />
+
+                        <RadioButton
+                            android:id="@+id/radio3"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/color3"
+                            android:button="@null" />
+
+                        <RadioButton
+                            android:id="@+id/radio4"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/color4"
+                            android:button="@null" />
+
+                        <RadioButton
+                            android:id="@+id/radio5"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/color5"
+                            android:button="@null" />
+
+                        <RadioButton
+                            android:id="@+id/radio6"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:background="@drawable/color6"
+                            android:button="@null" />
+                    </RadioGroup>
+                </HorizontalScrollView>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/button_Save"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:backgroundTint="@color/colorRed"
+                android:padding="10dp"
+                android:text="Save"
+                android:textColor="#FFF"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layoutPassword"
+                tools:ignore="HardcodedText,UnusedAttribute" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+</layout>

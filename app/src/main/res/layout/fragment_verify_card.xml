@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.screens.VerifyActivity">
+
+        <ImageView
+            android:id="@+id/imgLogo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="60dp"
+            android:src="@drawable/chip"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/txtApp"
+            style="@style/Text.Header"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imgLogo" />
+
+        <TextView
+            android:id="@+id/txtLogin"
+            style="@style/Text.Header"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/verify"
+            android:textAllCaps="true"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtApp"
+            app:layout_constraintVertical_bias="0.05" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layoutPan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="37dp"
+            android:layout_marginRight="37dp"
+            android:layout_marginBottom="@dimen/text_20"
+            android:hint="Card's Pan"
+            android:textColorHint="@color/colorHint"
+            app:hintTextColor="@color/colorPrimary"
+            app:layout_constraintBottom_toTopOf="@id/layout_code"
+            app:layout_constraintTop_toBottomOf="@id/txtLogin"
+            app:layout_constraintVertical_bias="0.1"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:startIconTint="@color/colorAccent"
+            tools:ignore="HardcodedText">
+
+            <com.github.pinball83.maskededittext.MaskedEditText
+                android:id="@+id/input_pan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/bg_edit_text"
+                android:digits="0123456789"
+                android:gravity="center|left"
+                android:inputType="numberPassword|phone"
+                android:singleLine="true"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="@id/text_name"
+                app:mask="**** **** **** ****"
+                app:notMaskedSymbol="*"
+                tools:ignore="HardcodedText,RtlHardcoded,RtlSymmetry" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="37dp"
+            android:layout_marginRight="37dp"
+            android:layout_marginBottom="30dp"
+            android:hint="@string/verify_code"
+            android:textColorHint="@color/colorHint"
+            app:hintAnimationEnabled="false"
+            app:hintTextColor="@color/color_hint_phone"
+            app:layout_constraintBottom_toTopOf="@id/button_verify"
+            app:layout_constraintTop_toBottomOf="@id/layoutPan">
+
+            <com.github.pinball83.maskededittext.MaskedEditText
+                android:id="@+id/text_code"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/bg_edit_text"
+                android:gravity="center"
+                android:inputType="numberSigned"
+                android:singleLine="true"
+                tools:ignore="RtlHardcoded,RtlSymmetry" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/button_verify"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="37dp"
+            android:layout_marginRight="37dp"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="@color/colorRed"
+            android:padding="10dp"
+            android:text="@string/verify_number"
+            android:textColor="#FFF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_code"
+            tools:ignore="UnusedAttribute" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

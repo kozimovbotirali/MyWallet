@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="295dp"
+    android:layout_height="174dp"
+    android:layout_marginEnd="15dp"
+    android:layout_marginRight="15dp"
+    app:cardCornerRadius="16dp"
+    tools:ignore="NewApi">
+
+    <ImageView
+        android:id="@+id/cardBg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/color5" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/tempLogo"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/uzcard_logo"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/text_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:maxWidth="200dp"
+            android:maxLines="2"
+            android:text="Credit"
+            android:textAllCaps="true"
+            android:textColor="#fff"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/text_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:maxWidth="200dp"
+            android:maxLines="2"
+            android:text="35084.96 so'm"
+            android:textColor="#fff"
+            android:textSize="18sp"
+            android:visibility="invisible"
+            app:layout_constraintLeft_toLeftOf="@id/text_name"
+            app:layout_constraintTop_toBottomOf="@id/text_name"
+            tools:ignore="HardcodedText" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/chip1"
+            app:layout_constraintBottom_toTopOf="@id/text_pan"
+            app:layout_constraintRight_toLeftOf="@id/tempLogo"
+            app:layout_constraintTop_toBottomOf="@id/text_amount" />
+
+
+        <!--<TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:maxWidth="200dp"
+            android:maxLines="2"
+            android:text="Han Solo"
+            android:textColor="#fff"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="HardcodedText" />-->
+
+        <com.github.pinball83.maskededittext.MaskedEditText
+            android:id="@+id/text_pan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/bg_edit_text_none"
+            android:clickable="false"
+            android:digits="0123456789"
+            android:focusable="false"
+            android:gravity="center|left"
+            android:inputType="none"
+            android:singleLine="true"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/text_name"
+            app:mask="#### #### #### ####"
+            app:notMaskedSymbol="#"
+            tools:ignore="HardcodedText,RtlHardcoded,RtlSymmetry" />
+
+        <com.github.pinball83.maskededittext.MaskedEditText
+            android:id="@+id/text_expired_at"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/text_20"
+            android:background="@drawable/bg_edit_text_none"
+            android:clickable="false"
+            android:digits="0123456789"
+            android:focusable="false"
+            android:gravity="center"
+            android:inputType="none"
+            android:singleLine="true"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/text_pan"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/text_pan"
+            app:mask="**/**"
+            app:notMaskedSymbol="*"
+            tools:ignore="HardcodedText,RtlHardcoded,RtlSymmetry" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?android:selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:focusable="true" />
+
+</androidx.cardview.widget.CardView>
